@@ -11,16 +11,14 @@ public class EditorFrame extends JFrame {
         setTitle("Code Editor");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Create text area with syntax highlighting
-        textArea = new RSyntaxTextArea(20, 60);
-        textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA); // Highlight Java
+        textArea = new RSyntaxTextArea(20, 60);//createing text area with syntax highlighting
+        textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA); //highlight Java
         textArea.setCodeFoldingEnabled(true);
 
         RTextScrollPane sp = new RTextScrollPane(textArea);
         add(sp);
 
-        // Menu bar
+        //menu bar
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
 
@@ -35,7 +33,7 @@ public class EditorFrame extends JFrame {
         menuBar.add(fileMenu);
         setJMenuBar(menuBar);
 
-        // File actions
+        //file actions
         openFile.addActionListener(e -> openFile());
         saveFile.addActionListener(e -> saveFile());
         exitApp.addActionListener(e -> System.exit(0));
@@ -67,3 +65,4 @@ public class EditorFrame extends JFrame {
         }
     }
 }
+
